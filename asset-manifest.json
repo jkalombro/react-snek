@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.93a3ff6f.chunk.css",
-    "main.js": "/static/js/main.a5ede659.chunk.js",
-    "main.js.map": "/static/js/main.a5ede659.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.cdf87d7b.chunk.js": "/static/js/2.cdf87d7b.chunk.js",
-    "static/js/2.cdf87d7b.chunk.js.map": "/static/js/2.cdf87d7b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.f6404e519edcd1f7dfebf833dbe44efa.js": "/precache-manifest.f6404e519edcd1f7dfebf833dbe44efa.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.93a3ff6f.chunk.css.map": "/static/css/main.93a3ff6f.chunk.css.map"
+    "main.css": "/react-snek/static/css/main.93a3ff6f.chunk.css",
+    "main.js": "/react-snek/static/js/main.92bc1158.chunk.js",
+    "main.js.map": "/react-snek/static/js/main.92bc1158.chunk.js.map",
+    "runtime~main.js": "/react-snek/static/js/runtime~main.aeda6471.js",
+    "runtime~main.js.map": "/react-snek/static/js/runtime~main.aeda6471.js.map",
+    "static/js/2.e491e06c.chunk.js": "/react-snek/static/js/2.e491e06c.chunk.js",
+    "static/js/2.e491e06c.chunk.js.map": "/react-snek/static/js/2.e491e06c.chunk.js.map",
+    "index.html": "/react-snek/index.html",
+    "precache-manifest.d8edb38e87cbb73de5f0f7e51790dd96.js": "/react-snek/precache-manifest.d8edb38e87cbb73de5f0f7e51790dd96.js",
+    "service-worker.js": "/react-snek/service-worker.js",
+    "static/css/main.93a3ff6f.chunk.css.map": "/react-snek/static/css/main.93a3ff6f.chunk.css.map"
   }
 }
