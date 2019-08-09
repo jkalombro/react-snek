@@ -1,9 +1,10 @@
 import React from 'react';
 
 //custom imports
-import { AppWrapper, GridWrapper, AppOverlay, GameButton, MB1 } from './components/App.component';
+import { AppWrapper, GridWrapper } from './components/App.component';
 import { Grid, GridCell } from './components/Board.components';
 import { shallowEquals, arrayDiff } from './helpers/utility';
+import Overlay from './containers/Overlay';
 
 // the main view
 class App extends React.Component {
@@ -15,7 +16,8 @@ class App extends React.Component {
       // 0 = not started, 1 = in progress, 2= finished
       status: 0,
       // using keycodes to indicate direction
-      direction: 39
+      direction: 39,
+      speed: 50
     };
   }
 
@@ -134,7 +136,7 @@ class App extends React.Component {
     );
   }
 
-  doesntOverlap = snake => {
+  doesntOverlap = (snake) => {
     return (
       snake.slice(1).filter(c => {
         return shallowEquals(snake[0], c);
@@ -143,9 +145,10 @@ class App extends React.Component {
   }
 
   startGame = () => {
+    const { speed } = this.state;
+
     this.removeTimers();
-    this.moveSnakeInterval = setInterval(this.moveSnake, 50);
-    // this.moveFood();
+    this.moveSnakeInterval = setInterval(this.moveSnake, speed);
 
     this.setState({
       status: 1,
@@ -153,8 +156,8 @@ class App extends React.Component {
       food: [10, 10],
       direction: 39
     });
-    //need to focus so keydown listener will work!
-    // this.el.focus();
+
+    this.el.focus();
   }
   
   endGame = () => {
@@ -197,31 +200,19 @@ class App extends React.Component {
       });
     });
 
-    let overlay;
-    if (this.state.status === 0) {
-      overlay = (
-        <AppOverlay>
-          <GameButton onClick={this.startGame}>Start game!</GameButton>
-        </AppOverlay>
-      );
-    } else if (this.state.status === 2) {
-      overlay = (
-        <AppOverlay>
-          <MB1><b>GAME OVER!</b></MB1>
-          <MB1>Your score: {this.state.snake.length - 4} </MB1>
-          <GameButton onClick={this.startGame}>Start a new game</GameButton>
-        </AppOverlay>
-      );
-    }
     return (
       <AppWrapper>
         <GridWrapper
           onKeyDown={this.setDirection}
           size={this.props.size}
           ref={el => (this.el = el)}
-          tabIndex={-1}
-          >
-            {overlay}
+          tabIndex={-1}>
+            
+            <Overlay 
+              status={this.state.status}
+              startGame={this.startGame}
+              snake={this.state.snake} />
+
             <Grid size={this.props.size}>
               {cells}
             </Grid>
