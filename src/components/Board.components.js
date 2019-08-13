@@ -19,6 +19,7 @@ export const GridCell = styled.div`
     background-color: ${props => props.foodCell ? 'orange' : 
                                  props.snakeCell ? 'cyan' : 
                                  props.wallCell ? 'darkgray' : 'black'};
+                                 
     border: ${props => props.foodCell || 
                        props.snakeCell || 
                        props.wallCell ? "1px solid black": "0px"};

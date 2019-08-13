@@ -29,8 +29,14 @@ class App extends React.Component {
   moveFood = () => {
     let x, y;
 
-    do x = parseInt(Math.random() * this.numCells - 1); while(x===0);
-    do y = parseInt(Math.random() * this.numCells - 1); while(y===0);
+    do{
+      //this will prevent the food from respawning in the wall
+      do x = parseInt(Math.random() * this.numCells - 1); while(x===0);
+      do y = parseInt(Math.random() * this.numCells - 1); while(y===0);
+
+      //this will prevent the food from respawning in snake body
+    } while(this.isFoodOverlapSnake([x, y]));
+    
     this.setState({ food: [x, y] });
   }
 
@@ -136,7 +142,15 @@ class App extends React.Component {
     );
   }
 
-  doesntOverlap = (snake) => {
+  isFoodOverlapSnake = food => {
+    return (
+      this.state.snake.slice(1).filter(c => {
+        return shallowEquals(food, c);
+      }).length > 1
+    );
+  }
+
+  doesntOverlap = snake => {
     return (
       snake.slice(1).filter(c => {
         return shallowEquals(snake[0], c);
@@ -177,8 +191,9 @@ class App extends React.Component {
   }
 
   render() {
-    // each cell should be approximately 15px wide, so calculate how many we need
-    this.numCells = Math.floor(this.props.size / 15);
+    // each cell should be approximately 15px(web)/10px(mobile) wide, so calculate how many we need
+    const celldivisor = this.props.screenmode === "web" ? 15 : 10;
+    this.numCells = Math.floor(this.props.size / celldivisor);
     const cellSize = this.props.size / this.numCells;
     const cellIndexes = Array.from(Array(this.numCells).keys());
     const cells = cellIndexes.map(y => {
