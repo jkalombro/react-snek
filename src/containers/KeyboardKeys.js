@@ -1,39 +1,48 @@
 import React from 'react';
-import { ArrowButton, ArrowTableWrapper } from '../components/Buttons.component';
+import { KeyboardButton, ArrowTableWrapper } from '../components/Buttons.component';
+import { IoMdArrowDropup, IoMdArrowDropdown, IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
 const KeyboardKeys = props => {
 
-    const setDirection = keyCode => {
-        props.setDirection(keyCode);
-    }
-
     return (
-        <ArrowTableWrapper>
+        <ArrowTableWrapper screenmode={props.screenmode}>
             <tbody>
                 <tr>
                     <td></td>
                     <td>
-                        <ArrowButton 
-                            direction="up" 
-                            setDirection={setDirection} />
+                        <KeyboardButton 
+                            screenmode={props.screenmode}
+                            isClicked={props.keypressed===38}
+                            onClick={() => props.setDirection({keyCode: 38})}>
+                            <IoMdArrowDropup />
+                        </KeyboardButton>
                     </td>
                     <td></td>
                 </tr>
                 <tr>
                     <td>
-                        <ArrowButton 
-                            direction="left" 
-                            setDirection={setDirection} />
+                        <KeyboardButton 
+                            screenmode={props.screenmode}
+                            isClicked={props.keypressed===37}
+                            onClick={() => props.setDirection({keyCode: 37})}>
+                            <IoMdArrowDropleft />
+                        </KeyboardButton>
                     </td>
                     <td>
-                        <ArrowButton 
-                            direction="down" 
-                            setDirection={setDirection} />
+                        <KeyboardButton 
+                            screenmode={props.screenmode}
+                            isClicked={props.keypressed===40}
+                            onClick={() => props.setDirection({keyCode: 40})}>
+                            <IoMdArrowDropdown />
+                        </KeyboardButton>
                     </td>
                     <td>
-                        <ArrowButton 
-                            direction="right" 
-                            setDirection={setDirection} />
+                        <KeyboardButton 
+                            screenmode={props.screenmode}
+                            isClicked={props.keypressed===39}
+                            onClick={() => props.setDirection({keyCode: 39})}>
+                            <IoMdArrowDropright />
+                        </KeyboardButton>
                     </td>
                 </tr>
             </tbody>

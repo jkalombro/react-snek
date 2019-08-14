@@ -18,6 +18,7 @@ class App extends React.Component {
       status: 0,
       // using keycodes to indicate direction
       direction: 39,
+      keypressed: 0,
       speed: 100
     };
   }
@@ -54,9 +55,19 @@ class App extends React.Component {
         }
       });
 
-      if (changeDirection && ( keyCode===37 || keyCode===38 || keyCode===39 || keyCode===40 )) 
-        this.setState({ direction: keyCode });
+      if ( keyCode===37 || keyCode===38 || keyCode===39 || keyCode===40 ) {
+        if (changeDirection) {
+          this.setState({ direction: keyCode, keypressed: keyCode }, () => this.resetKeypressed());
+        }else{
+          this.setState({ keypressed: keyCode }, () => this.resetKeypressed());
+        }
+      } 
     }
+  }
+
+  //this will reset the focus of arrow buttons
+  resetKeypressed = () => {
+    setTimeout(() => this.setState({keypressed: 0}), 20)
   }
 
   moveSnake = () => {
@@ -219,7 +230,7 @@ class App extends React.Component {
     return (
       <AppWrapper screenmode={this.props.screenmode} >
         <LeaderBoardsWrapper>
-          Soon
+          LeaderBoards Coming Soon
         </LeaderBoardsWrapper>
 
         <GridWrapper
@@ -242,7 +253,8 @@ class App extends React.Component {
         <KeyboardWrapper screenmode={this.props.screenmode}>
           <KeyboardKeys 
             setDirection={this.setDirection} 
-            direction={this.state.direction} />
+            keypressed={this.state.keypressed}
+            screenmode={this.props.screenmode} />
         </KeyboardWrapper>
 
       </AppWrapper>
