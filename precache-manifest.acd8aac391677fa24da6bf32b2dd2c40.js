@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a0146f8f6698c88fc9bb37cfef4b71e8",
+    "revision": "b676019f43f30aebb75ff5e98a26e3fe",
     "url": "/react-snek/index.html"
   },
   {
-    "revision": "0cea1f020c4525c7366c",
+    "revision": "69b82928ccd76fa1e20f",
     "url": "/react-snek/static/css/main.93a3ff6f.chunk.css"
   },
   {
-    "revision": "4bacc690234c2bdcb463",
-    "url": "/react-snek/static/js/2.af3516ee.chunk.js"
+    "revision": "e9f707b9b31357661f14",
+    "url": "/react-snek/static/js/2.69153d2c.chunk.js"
   },
   {
-    "revision": "0cea1f020c4525c7366c",
-    "url": "/react-snek/static/js/main.f5e0c4ce.chunk.js"
+    "revision": "69b82928ccd76fa1e20f",
+    "url": "/react-snek/static/js/main.d3fb521c.chunk.js"
   },
   {
     "revision": "e037d10deb72bb61cc55",
