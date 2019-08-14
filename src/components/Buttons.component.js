@@ -17,7 +17,18 @@ export const GameButton = styled.button`
     }
 `;
 
-export const KeyboardButton = styled.button`
+export const ArrowTableWrapper = styled.table`
+    border: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -126px;
+    bottom: 3.5rem;
+    border-spacing: 0;
+    border-collapse: collapse;
+`;
+
+//*********** START PRIVATE COMPONENTS ******************//
+const KeyboardButton = styled.button`
     background-color : #eee;
     color: rgb(51, 51, 51);
     border-radius: 3px;
@@ -33,7 +44,9 @@ export const KeyboardButton = styled.button`
         background-color : #A9A9A9;
     }
 `;
+//*********** END PRIVATE COMPONENTS ******************//
 
+//*********** START FUNCTIONAL COMPONENTS ******************//
 export const ArrowButton = props => {
 
     switch(props.direction) {
@@ -44,13 +57,4 @@ export const ArrowButton = props => {
         default: return null;
     }
 }
-
-export const ArrowTableWrapper = styled.table`
-    border: 0;
-    position: absolute;
-    left: 50%;
-    margin-left: -126px;
-    bottom: 3.5rem;
-    border-spacing: 0;
-    border-collapse: collapse;
-`;
+//*********** END FUNCTIONAL COMPONENTS ******************//
