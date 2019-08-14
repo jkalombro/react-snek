@@ -5,7 +5,7 @@ export const AppWrapper = styled.div`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: ${props => props.screenmode==="web" ? 'row' : 'column'};
   align-items: center;
   justify-content: center;
   color: white;
@@ -14,10 +14,21 @@ export const AppWrapper = styled.div`
 export const GridWrapper = styled.div`
   height: ${props => props.size + "px"};
   width: ${props => props.size + "px"};
+  flex: 1;
 
   &:hover, &:focus, &:active {
     outline: none;
   }
+`;
+
+export const KeyboardWrapper = styled.div`
+  flex: 1;
+  position: relative;
+  height: ${props => props.screenmode==="web" ? '100vh': 'auto'};
+`;
+
+export const LeaderBoardsWrapper = styled.div`
+  flex: 1;
 `;
 
 export const AppOverlay = styled.div`
@@ -33,21 +44,7 @@ export const AppOverlay = styled.div`
   align-items: center;
   color: white;
   font-size: 1.2rem;
-`;
-
-export const GameButton = styled.button`
-  background-color : blue;
-  color: white;
-  border-radius: 3px;
-  border: 2px solid blue;
-  padding: .75rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
-  box-shadow: 0 0 10px black;
-
-  &:hover, &:focus, &:active {
-    outline: none;
-  }
+  z-index: 1021;
 `;
 
 export const MB1 = styled.div`

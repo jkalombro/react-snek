@@ -1,10 +1,11 @@
 import React from 'react';
 
 //custom imports
-import { AppWrapper, GridWrapper } from './components/App.component';
+import { AppWrapper, GridWrapper, KeyboardWrapper, LeaderBoardsWrapper } from './components/App.component';
 import { Grid, GridCell } from './components/Board.components';
 import { shallowEquals, arrayDiff } from './helpers/utility';
 import Overlay from './containers/Overlay';
+import KeyboardKeys from './containers/KeyboardKeys';
 
 // the main view
 class App extends React.Component {
@@ -17,7 +18,7 @@ class App extends React.Component {
       status: 0,
       // using keycodes to indicate direction
       direction: 39,
-      speed: 50
+      speed: 100
     };
   }
 
@@ -216,7 +217,11 @@ class App extends React.Component {
     });
 
     return (
-      <AppWrapper>
+      <AppWrapper screenmode={this.props.screenmode} >
+        <LeaderBoardsWrapper>
+          Soon
+        </LeaderBoardsWrapper>
+
         <GridWrapper
           onKeyDown={this.setDirection}
           size={this.props.size}
@@ -231,7 +236,15 @@ class App extends React.Component {
             <Grid size={this.props.size}>
               {cells}
             </Grid>
+            
         </GridWrapper>
+
+        <KeyboardWrapper screenmode={this.props.screenmode}>
+          <KeyboardKeys 
+            setDirection={this.setDirection} 
+            direction={this.state.direction} />
+        </KeyboardWrapper>
+
       </AppWrapper>
     );
   }

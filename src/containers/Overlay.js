@@ -1,5 +1,6 @@
 import React from 'react';
-import { AppOverlay, GameButton, MB1 } from '../components/App.component';
+import { AppOverlay, MB1 } from '../components/App.component';
+import { GameButton } from '../components/Buttons.component';
 
 const Overlay = props => {
     if (props.status === 0) {
