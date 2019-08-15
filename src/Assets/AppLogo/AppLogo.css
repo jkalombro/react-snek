@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.svg-wrapper svg {
+    display: block;
+    font: 4em 'Montserrat';
+    width: 500px;
+    height: 156px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 2.5px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: rgb(2, 56, 92);
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: rgb(0, 89, 148);
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: rgb(0, 153, 255);
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: cyan;
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: orange;
+	animation-delay: -5s;
+}
+
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+
+.logo-background {
+    position: relative;
+    background-color: black;
+    border: 10px dashed rgb(119, 119, 119);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-subtext {
+    font: 0.8rem 'Montserrat';
+    margin-top: -10%;
+    letter-spacing: 0.8rem;;
+}
+
+@media screen and (max-width: 600px) {
+    .svg-wrapper svg {
+        width: 90%;
+        height: 15vh;
+    }
+
+    .logo-background {
+        border: 5px dashed rgb(119, 119, 119);
+        padding: 1rem;
+    }
+
+    .text-copy {
+        stroke-width: 1.5px;
+    }
+
+    .logo-subtext {
+        font: 0.4rem 'Montserrat';
+        letter-spacing: 0.4rem;
+    }
+}

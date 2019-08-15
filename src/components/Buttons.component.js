@@ -15,6 +15,24 @@ export const GameButton = styled.button`
     }
 `;
 
+export const IntroPageButton = styled.button`
+    width: 250px;
+    background-color : #003d98;
+    color: white;
+    border-radius: 50px;
+    border: 0;
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    letter-spacing: 0.2rem;
+
+    &:hover, &:focus, &:active {
+        background-color : #002356;
+        outline: none;
+    }
+`;
+
 export const ArrowTableWrapper = styled.table`
     border: 0;
     position: absolute;
@@ -36,7 +54,11 @@ export const KeyboardButton = styled.button`
     font-size: ${props => props.screenmode==='web' ? '2rem' : '1.5rem'};
     /* box-shadow: 0 0 10px black; */
 
-    &:hover, &:focus, &:active {
+    &:focus {
+        outline: none;
+    }
+
+    &:hover, &:active {
         outline: none;
         background-color : #A9A9A9;
     }

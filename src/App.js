@@ -14,12 +14,12 @@ class App extends React.Component {
     this.state = {
       snake: [],
       food: [],
-      // 0 = not started, 1 = in progress, 2= finished
-      status: 0,
+      // [intro, loading, standby, ingame, end]
+      status: "intro",
       // using keycodes to indicate direction
       direction: 39,
       keypressed: 0,
-      speed: 100
+      speed: 50
     };
   }
 
@@ -37,14 +37,14 @@ class App extends React.Component {
       do y = parseInt(Math.random() * this.numCells - 1); while(y===0);
 
       //this will prevent the food from respawning in snake body
-    } while(this.isFoodOverlapSnake([x, y]));
+    } while(!this.foodDoesntOverlapSnake([x, y]));
     
     this.setState({ food: [x, y] });
   }
 
   setDirection = ({ keyCode }) => {
 
-    if (keyCode === 32 && (this.state.status === 0 || this.state.status === 2)){
+    if (keyCode === 32 && (this.state.status === "standby" || this.state.status === "end")){
       this.startGame();
     }else{
       // if it's the same direction or simply reversing, ignore
@@ -67,7 +67,12 @@ class App extends React.Component {
 
   //this will reset the focus of arrow buttons
   resetKeypressed = () => {
-    setTimeout(() => this.setState({keypressed: 0}), 20)
+    setTimeout(() => this.setState({keypressed: 0}), 30)
+  }
+
+  initializeGame = () => {
+    this.setState({ status: "loading" }, () => 
+      setTimeout(() => this.setState({status: "standby"}), 2600));
   }
 
   moveSnake = () => {
@@ -154,11 +159,11 @@ class App extends React.Component {
     );
   }
 
-  isFoodOverlapSnake = food => {
+  foodDoesntOverlapSnake = food => {
     return (
       this.state.snake.slice(1).filter(c => {
         return shallowEquals(food, c);
-      }).length > 1
+      }).length === 0
     );
   }
 
@@ -177,7 +182,7 @@ class App extends React.Component {
     this.moveSnakeInterval = setInterval(this.moveSnake, speed);
 
     this.setState({
-      status: 1,
+      status: "ingame",
       snake: [[5, 5], [4, 5], [3, 5], [2, 5]],
       food: [10, 10],
       direction: 39
@@ -189,7 +194,7 @@ class App extends React.Component {
   endGame = () => {
     this.removeTimers();
     this.setState({
-      status : 2
+      status : "end"
     })
   }
 
@@ -240,8 +245,10 @@ class App extends React.Component {
           tabIndex={-1}>
             
             <Overlay 
+              screenmode={this.props.screenmode}
               status={this.state.status}
               startGame={this.startGame}
+              initializeGame={this.initializeGame}
               snake={this.state.snake} />
 
             <Grid size={this.props.size}>
