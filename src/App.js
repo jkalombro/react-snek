@@ -1,11 +1,13 @@
 import React from 'react';
 
 //custom imports
-import { AppWrapper, GridWrapper, KeyboardWrapper, LeaderBoardsWrapper } from './components/App.component';
-import { Grid, GridCell } from './components/Board.components';
+import { AppWrapper, KeyboardWrapper, LeaderBoardsWrapper } from './components/App.components';
+import { GridWrapper, Grid, GridCell } from './components/Board.components';
 import { shallowEquals, arrayDiff } from './helpers/utility';
+
 import Overlay from './containers/Overlay';
 import KeyboardKeys from './containers/KeyboardKeys';
+import BoardHeader from './containers/BoardHeader';
 
 // the main view
 class App extends React.Component {
@@ -19,7 +21,7 @@ class App extends React.Component {
       // using keycodes to indicate direction
       direction: 39,
       keypressed: 0,
-      speed: 50
+      speed: this.props.screenmode==="web" ? 50 : 150
     };
   }
 
@@ -251,6 +253,7 @@ class App extends React.Component {
               initializeGame={this.initializeGame}
               snake={this.state.snake} />
 
+            <BoardHeader snake={this.state.snake} />
             <Grid size={this.props.size}>
               {cells}
             </Grid>

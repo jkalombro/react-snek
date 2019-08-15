@@ -1,7 +1,7 @@
 import React from 'react';
-import { AppOverlay, IntroOverlay, MB1 } from '../components/App.component';
-import { GameButton, IntroPageButton } from '../components/Buttons.component';
-import { SpinningLoader } from '../components/Animations.component';
+import { AppOverlay, IntroOverlay, MB1 } from '../components/App.components';
+import { GameButton, IntroPageButton } from '../components/Buttons.components';
+import { SpinningLoader } from '../components/Animations.components';
 
 import AppLogo from '../Assets/AppLogo/AppLogo';
 

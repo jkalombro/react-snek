@@ -15,16 +15,6 @@ export const AppWrapper = styled.div`
   color: white;
 `;
 
-export const GridWrapper = styled.div`
-  height: ${props => props.size + "px"};
-  width: ${props => props.size + "px"};
-  flex: 1;
-
-  &:hover, &:focus, &:active {
-    outline: none;
-  }
-`;
-
 export const KeyboardWrapper = styled.div`
   flex: 1;
   position: relative;

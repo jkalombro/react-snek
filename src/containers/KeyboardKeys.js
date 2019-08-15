@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardButton, ArrowTableWrapper } from '../components/Buttons.component';
+import { KeyboardButton, ArrowTableWrapper } from '../components/Buttons.components';
 import { IoMdArrowDropup, IoMdArrowDropdown, IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
 const KeyboardKeys = props => {
