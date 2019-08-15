@@ -37,8 +37,8 @@ export const ArrowTableWrapper = styled.table`
     border: 0;
     position: absolute;
     left: 50%;
-    margin-left: -126px;
-    bottom: ${props => props.screenmode==="web" ? '3.5rem': '0.5rem' };
+    margin-left: ${props => props.screenmode==="web" ? '-126px' :'-115px'};
+    bottom: ${props => props.screenmode==="web" ? '3.5rem': '0.3rem' };
     border-spacing: 0;
     border-collapse: collapse;
 `;
@@ -51,7 +51,7 @@ export const KeyboardButton = styled.button`
     margin: 0.3rem;
     background-color : ${props => props.isClicked ? '#A9A9A9' : '#eee' };
     padding: ${props => props.screenmode==="web" ? "1.25rem 1.5rem" : "1rem 1.5rem"};
-    font-size: ${props => props.screenmode==='web' ? '2rem' : '1.5rem'};
+    font-size: ${props => props.screenmode==='web' ? '2rem' : '1rem'};
     /* box-shadow: 0 0 10px black; */
 
     &:focus {
