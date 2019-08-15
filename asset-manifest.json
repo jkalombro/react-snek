@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-snek/static/css/main.a2f3e370.chunk.css",
-    "main.js": "/react-snek/static/js/main.6473a30b.chunk.js",
-    "main.js.map": "/react-snek/static/js/main.6473a30b.chunk.js.map",
+    "main.js": "/react-snek/static/js/main.75d0eef2.chunk.js",
+    "main.js.map": "/react-snek/static/js/main.75d0eef2.chunk.js.map",
     "runtime~main.js": "/react-snek/static/js/runtime~main.aeda6471.js",
     "runtime~main.js.map": "/react-snek/static/js/runtime~main.aeda6471.js.map",
     "static/js/2.e8c39532.chunk.js": "/react-snek/static/js/2.e8c39532.chunk.js",
     "static/js/2.e8c39532.chunk.js.map": "/react-snek/static/js/2.e8c39532.chunk.js.map",
     "index.html": "/react-snek/index.html",
-    "precache-manifest.6e783541ede0bea6f9ffd2b5ec918e34.js": "/react-snek/precache-manifest.6e783541ede0bea6f9ffd2b5ec918e34.js",
+    "precache-manifest.4d740c67dc90c38abef1e73e254ae755.js": "/react-snek/precache-manifest.4d740c67dc90c38abef1e73e254ae755.js",
     "service-worker.js": "/react-snek/service-worker.js",
     "static/css/main.a2f3e370.chunk.css.map": "/react-snek/static/css/main.a2f3e370.chunk.css.map"
   }
