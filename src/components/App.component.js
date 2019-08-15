@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const AppWrapper = styled.div`
   text-align: center;
   background-color: #282c34;
-  min-height: ${props => props.screenmode==="web" ? '100vh': '92vh'};
+  min-height: ${props => props.screenmode==="web" ? '100vh': '90.5vh'};
   display: flex;
   flex-direction: ${props => props.screenmode==="web" ? 'row' : 'column'};
   align-items: center;
