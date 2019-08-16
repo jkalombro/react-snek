@@ -241,6 +241,7 @@ class App extends React.Component {
         </LeaderBoardsWrapper>
 
         <GridWrapper
+          screenmode={this.props.screenmode}
           onKeyDown={this.setDirection}
           size={this.props.size}
           ref={el => (this.el = el)}
@@ -253,7 +254,10 @@ class App extends React.Component {
               initializeGame={this.initializeGame}
               snake={this.state.snake} />
 
-            <BoardHeader snake={this.state.snake} />
+            <BoardHeader 
+              screenmode={this.props.screenmode}
+              snake={this.state.snake} />
+
             <Grid size={this.props.size}>
               {cells}
             </Grid>

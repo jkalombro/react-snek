@@ -10,6 +10,8 @@ export const GameButton = styled.button`
     cursor: pointer;
     box-shadow: 0 0 10px black;
 
+    ${props => props.screenmode==="mobile" ? `margin-top: -30%`: ''};
+
     &:hover, &:focus, &:active {
         outline: none;
     }

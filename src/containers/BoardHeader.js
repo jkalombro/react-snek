@@ -7,7 +7,7 @@ const BoardHeader = props => {
     const score = props.snake.length - 4 > -1 ? props.snake.length - 4: 0;
 
     return (
-        <BoardheadWrapper>
+        <BoardheadWrapper screenmode={props.screenmode}>
             <div>Playing as 
                 <PlayernameWrapper>Anonymous</PlayernameWrapper>
             </div>

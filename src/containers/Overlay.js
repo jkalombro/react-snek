@@ -29,13 +29,15 @@ const Overlay = props => {
     } else if (props.status === "standby") {
         return (
             <AppOverlay>
-                <GameButton onClick={props.startGame}>Start game!</GameButton>
+                <GameButton onClick={props.startGame} screenmode={props.screenmode}>
+                    Start game!
+                </GameButton>
             </AppOverlay>
         );
     } else if (props.status === "end") {
         return (
             <AppOverlay>
-                <MB1><b>GAME OVER!</b></MB1>
+                <MB1 screenmode={props.screenmode}><b>GAME OVER!</b></MB1>
                 <MB1>Your score: {props.snake.length - 4} </MB1>
                 <GameButton onClick={props.startGame}>Start a new game</GameButton>
             </AppOverlay>

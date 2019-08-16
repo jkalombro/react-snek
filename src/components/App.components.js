@@ -59,4 +59,6 @@ export const IntroOverlay = styled.div`
 
 export const MB1 = styled.div`
   margin-bottom: 1rem;
+
+  ${props => props.screenmode==="mobile" ? `margin-top: -30%`: ''};
 `;
