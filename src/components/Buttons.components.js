@@ -40,7 +40,7 @@ export const ArrowTableWrapper = styled.table`
     position: absolute;
     left: 50%;
     margin-left: -126px;
-    bottom: ${props => props.screenmode==="web" ? '3.5rem': '0.4rem' };
+    bottom: ${props => props.screenmode==="web" ? '3.5rem': '0.5rem' };
     border-spacing: 0;
     border-collapse: collapse;
 `;
