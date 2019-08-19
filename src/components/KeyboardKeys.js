@@ -1,8 +1,8 @@
 import React from 'react';
-import { KeyboardButton, ArrowTableWrapper } from '../components/Buttons.components';
+import { KeyboardButton, ArrowTableWrapper } from '../styled-components/Buttons.styled';
 import { IoMdArrowDropup, IoMdArrowDropdown, IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
-const KeyboardKeys = props => {
+function KeyboardKeys(props) {
 
     return (
         <ArrowTableWrapper screenmode={props.screenmode}>

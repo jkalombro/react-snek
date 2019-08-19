@@ -1,11 +1,12 @@
 import React from 'react';
-import { AppOverlay, IntroOverlay, MB1 } from '../components/App.components';
-import { GameButton, IntroPageButton } from '../components/Buttons.components';
-import { SpinningLoader } from '../components/Animations.components';
+import { AppOverlay, IntroOverlay, MB1 } from '../styled-components/App.styled';
+import { GameButton, IntroPageButton } from '../styled-components/Buttons.styled';
+import { SpinningLoader } from '../styled-components/Animations.styled';
 
 import AppLogo from '../Assets/AppLogo/AppLogo';
 
-const Overlay = props => {
+function Overlay(props) {
+    
     if (props.status === "intro") {
         return (
             <IntroOverlay>

@@ -1,13 +1,13 @@
 import React from 'react';
 
 //custom imports
-import { AppWrapper, KeyboardWrapper, LeaderBoardsWrapper } from './components/App.components';
-import { GridWrapper, Grid, GridCell } from './components/Board.components';
+import { AppWrapper, KeyboardWrapper, LeaderBoardsWrapper } from './styled-components/App.styled';
+import { GridWrapper, Grid, GridCell } from './styled-components/Board.styled';
 import { shallowEquals, arrayDiff } from './helpers/utility';
 
-import Overlay from './containers/Overlay';
-import KeyboardKeys from './containers/KeyboardKeys';
-import BoardHeader from './containers/BoardHeader';
+import Overlay from './components/Overlay';
+import KeyboardKeys from './components/KeyboardKeys';
+import BoardHeader from './components/BoardHeader';
 
 // the main view
 class App extends React.Component {
