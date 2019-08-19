@@ -1,9 +1,9 @@
 import React from 'react';
-import { BoardheadWrapper, PlayernameWrapper, ScoreWrapper } from '../components/Board.components';
+import { BoardheadWrapper, PlayernameWrapper, ScoreWrapper } from '../styled-components/Board.styled';
 
 import { FaStar } from 'react-icons/fa';
 
-const BoardHeader = props => {
+function BoardHeader(props) {
     const score = props.snake.length - 4 > -1 ? props.snake.length - 4: 0;
 
     return (
