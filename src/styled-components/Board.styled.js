@@ -21,6 +21,7 @@ export const Grid = styled.div`
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
 
     ${props => `height: ${props.size}px;
                 width: ${props.size}px;`};

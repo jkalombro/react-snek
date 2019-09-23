@@ -3,7 +3,7 @@ import { BoardheadWrapper, PlayernameWrapper, ScoreWrapper } from '../styled-com
 
 import { FaStar } from 'react-icons/fa';
 
-function BoardHeader(props) {
+const BoardHeader = props => {
     const score = props.snake.length - 4 > -1 ? props.snake.length - 4: 0;
 
     return (

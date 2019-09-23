@@ -5,7 +5,7 @@ import { SpinningLoader } from '../styled-components/Animations.styled';
 
 import AppLogo from '../Assets/AppLogo/AppLogo';
 
-function Overlay(props) {
+const Overlay = props => {
     
     if (props.status === "intro") {
         return (
@@ -21,15 +21,15 @@ function Overlay(props) {
             </IntroOverlay>
         );
     } else if (props.status === "loading") {
-            return (
-                <AppOverlay>
-                    <MB1><SpinningLoader /></MB1>
-                    <MB1>Initializing game...</MB1>
-                </AppOverlay>
-            );
+        return (
+            <AppOverlay size={props.size} screenmode={props.screenmode}>
+                <MB1><SpinningLoader /></MB1>
+                <MB1>Initializing game...</MB1>
+            </AppOverlay>
+        );
     } else if (props.status === "standby") {
         return (
-            <AppOverlay>
+            <AppOverlay size={props.size} screenmode={props.screenmode}>
                 <GameButton onClick={props.startGame} screenmode={props.screenmode}>
                     Start game!
                 </GameButton>
@@ -37,7 +37,7 @@ function Overlay(props) {
         );
     } else if (props.status === "end") {
         return (
-            <AppOverlay>
+            <AppOverlay size={props.size} screenmode={props.screenmode}>
                 <MB1 screenmode={props.screenmode}><b>GAME OVER!</b></MB1>
                 <MB1>Your score: {props.snake.length - 4} </MB1>
                 <GameButton onClick={props.startGame}>Start a new game</GameButton>
