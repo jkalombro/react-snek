@@ -15,6 +15,22 @@ export const AppWrapper = styled.div`
   color: white;
 `;
 
+export const LandingPageWrapper = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-color: #030321;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 1021;
+`;
+
 export const KeyboardWrapper = styled.div`
   flex: 1;
   position: relative;
@@ -41,24 +57,6 @@ export const AppOverlay = styled.div`
   z-index: 1021;
 `;
 
-export const IntroOverlay = styled.div`
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  background-color: #030321;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 1.2rem;
-  z-index: 1021;
-`;
-
 export const MB1 = styled.div`
   margin-bottom: 1rem;
-
-  ${props => props.screenmode==="mobile" ? `margin-top: -30%`: ''};
 `;

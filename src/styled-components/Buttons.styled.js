@@ -10,14 +10,12 @@ export const GameButton = styled.button`
     cursor: pointer;
     box-shadow: 0 0 10px black;
 
-    ${props => props.screenmode==="mobile" ? `margin-top: -30%`: ''};
-
     &:hover, &:focus, &:active {
         outline: none;
     }
 `;
 
-export const IntroPageButton = styled.button`
+export const LandingPageButton = styled.button`
     width: 250px;
     background-color : #003d98;
     color: white;
