@@ -8,6 +8,7 @@ import { shallowEquals, arrayDiff } from '../helpers/utility';
 import Overlay from './sub-components/Overlay';
 import KeyboardKeys from './sub-components/KeyboardKeys';
 import BoardHeader from './sub-components/BoardHeader';
+import LeaderBoards from './sub-components/LeaderBoards';
 
 class Game extends Component {
     static contextType = GameContext;
@@ -234,8 +235,8 @@ class Game extends Component {
     
         return (
           <AppWrapper screenmode={screenmode} >
-            <LeaderBoardsWrapper>
-              LeaderBoards Coming Soon
+            <LeaderBoardsWrapper screenmode={screenmode}>
+              <LeaderBoards />
             </LeaderBoardsWrapper>
     
             <GridWrapper

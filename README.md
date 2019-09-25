@@ -1,4 +1,4 @@
-This project was created using ReactJS with Styled-components
+This project was created using ReactJS with Styled-components, ReactHooks and ContextAPI.
 
 ## Snake App using ReactJS
 
