@@ -6,7 +6,7 @@ import { ScoreBoardWrapper, RankHead, RankWrapper, StyledName, TableWrapper, Ran
 const ScoreBoard = props => {
 
     const rankrows = props.ranking.length > 0 ? props.ranking.map(item => (
-        <tr>
+        <tr key={item.rank}>
             <RankTD>
                 <RankTrophy rank={item.rank} />
             </RankTD>
@@ -17,7 +17,11 @@ const ScoreBoard = props => {
                 <RankScore><FaStar /> {item.score}</RankScore>
             </RankTD>
         </tr>
-    )) : ( <RankTD nodata ><StyledName>NO DATA AVAILABLE</StyledName></RankTD> );
+    )) : ( 
+        <tr>
+            <RankTD nodata ><StyledName>NO DATA AVAILABLE</StyledName></RankTD>
+        </tr> 
+    );
 
     return (
         <ScoreBoardWrapper>
