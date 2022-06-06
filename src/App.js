@@ -4,6 +4,7 @@ import { GameProvider, defaultValues } from './helpers/GameContext';
 //components
 import LandinPage from './components/LandingPage';
 import Game from './components/Game';
+import { Suspense } from 'react/cjs/react.production.min';
 class App extends React.Component {
 
   constructor() {
@@ -23,9 +24,14 @@ class App extends React.Component {
       <GameProvider value={defaultValues}>
         {
           this.state.isUserRegistered ? (
-            <Game />
+            <Suspense>
+              <Game />
+            </Suspense>
+            
           ) : ( 
-            <LandinPage initializeGame={this.initializeGame} />
+            <Suspense>
+              <LandinPage initializeGame={this.initializeGame} />
+            </Suspense>
           )
         }
         
