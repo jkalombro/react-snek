@@ -23,7 +23,7 @@ class Game extends Component {
           // using keycodes to indicate direction
           direction: 39,
           keypressed: 0,
-          speed: 150
+          speed: 200
         };
     }
     
