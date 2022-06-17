@@ -1,0 +1,41 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.3.0
+        with:
+          # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 12.x
+
+      - name: Install
+        run: |
+          npm ci
+      - name: Run test
+        run: |
+          npm run test
+      - name: Run Build
+        run: |
+          npm run build
+      - name: Configure author
+        run: |
+          git config --global user.email "jerichalombro@gmail.com"
+          git config --global user.name "jkalombro"
+      - name: Deploy to GH Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
