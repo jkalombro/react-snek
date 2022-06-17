@@ -1,0 +1,32 @@
+name: CICD - Run Premerge Checks
+
+on:
+  pull_request:
+    branches: [ "master" ]
+    
+  workflow_dispatch:
+
+permissions: 
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.3.0
+        with:
+          node-version: 12.x
+          
+      - name: Install
+        run: |
+          npm ci
+      - name: Run test
+        run: |
+          npm run test
+      - name: Run Build
+        run: |
+          npm run build
