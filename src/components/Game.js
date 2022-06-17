@@ -236,7 +236,7 @@ class Game extends Component {
         return (
           <AppWrapper screenmode={screenmode} >
             <LeaderBoardsWrapper screenmode={screenmode}>
-              {screenmode=="web" ? <LeaderBoards /> : null}
+              {screenmode==="web" ? <LeaderBoards /> : null}
             </LeaderBoardsWrapper>
     
             <GridWrapper
